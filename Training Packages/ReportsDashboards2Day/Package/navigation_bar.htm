@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="Library/AIRAliases.js"></script>
+<script type="text/javascript">
+var pageNum         = 1;
+var numPages        = 0;
+var myWindow        = null;
+var myLab           = parent.document.getElementById('cueCard').title;
+var screenshotArray = [];
+
+//document.getElementById('topic1').value = "Test";
+
+
+function screenshotVisible() {
+    if (screenshotArray[pageNum])
+	{
+		document.getElementById('Screenshot').src           = "Images/screenshot1.png";
+		document.getElementById('Screenshot').style.display = "block";
+	} 
+	else
+	{
+		document.getElementById('Screenshot').style.display = "none";
+	}
+}
+
+function screenshot() {
+	changeImage('Screenshot','screenshot3.png');
+	myWindow = window.open("Labs/HTML/" +myLab + ".htm#Screenshot"+String(pageNum),"Screenshot","status=0,left=10,top=100,width=773,height=650,menubar=no,alwaysInFront=true,,resizable=yes,directories=no,location=no")
+}
+
+function endScreenshot() {
+	changeImage('Screenshot','screenshot1.png');	
+	document.getElementById('gotoPage').value = pageNum;	
+    myWindow.close ();
+}
+
+function gotoPage() {
+	if (document.getElementById('gotoPage').value >= 1 && document.getElementById('gotoPage').value <= numPages)
+	{       
+		pageNum = document.getElementById('gotoPage').value * 1;
+		parent.document.getElementById('cueCard').src="Labs/HTML/" +myLab + ".htm#CueCard"+String(pageNum)
+		document.getElementById('gotoPage').value = pageNum;
+		screenshotVisible();
+		myWindow.close ();
+	}
+	else
+	{
+		document.getElementById('gotoPage').value = pageNum;
+		alert("Please enter a numeric value between 1 and " + String(numPages)+ "."); 
+	}
+}
+
+function pageDown() {
+	if (pageNum < numPages) {
+		pageNum = (pageNum * 1) + 1;
+		parent.document.getElementById('cueCard').src="Labs/HTML/" +myLab + ".htm#CueCard"+String(pageNum);
+		document.getElementById('gotoPage').value = pageNum;	
+	}
+	screenshotVisible();
+    myWindow.close ();
+}
+
+function pageUp() {
+	if (pageNum > 1) {
+		pageNum = pageNum - 1;
+		parent.document.getElementById('cueCard').src="Labs/HTML/" +myLab + ".htm#CueCard"+String(pageNum);
+		document.getElementById('gotoPage').value = pageNum;		
+	}
+	screenshotVisible();
+    myWindow.close ();
+}
+
+function countAnchors() {
+
+var screenshotNum   = 0;
+    var anchorTags      = parent.window.frames['cueCard'].document.getElementsByTagName('a'); 
+
+	if (anchorTags.length==0) { 
+
+		window.setTimeout(function() {
+			countAnchors();
+		}, 750);
+
+	}
+
+    for(var i=0; i<anchorTags.length; i++) {
+	   if (anchorTags[i].name.indexOf("CueCard") != -1) 
+	   { 
+	       numPages = numPages + 1; 
+	   }
+	   
+	   if (anchorTags[i].name.indexOf("Screenshot") != -1) 
+	   { 
+	       screenshotNum = anchorTags[i].name.substring(10);   
+		   screenshotArray[screenshotNum] = 1;
+	   } 
+    }
+	document.getElementById('numPages').innerText = "/ " + String(numPages);
+	screenshotVisible();
+	
+}
+
+function changeImage(buttonId, buttonImage) {
+	document.getElementById(buttonId).src= "Images/" + buttonImage;
+}
+
+function printLab() {
+			my_printwindow = window.open("Labs/PDF/" + myLab + ".pdf","Screenshot","status=0,left=10,top=100,width=800,height=600,menubar=no,alwaysInFront=true,,resizable=yes,directories=no,location=no");  
+}
+</script>
+<style type="text/css">
+<!--
+.NoPadding {
+	margin: 0px;
+	padding: 0px;
+}
+-->
+</style>
+</head>
+<body background="Images/navigation_bar.png" onload="javascript:countAnchors()">
+
+<table width="100%" border="0">
+  <tr height="100%">
+    <td width="40" valign="top" class="NoPadding"><img src="Images/arrow_left1.png" id="PageUp" onMouseOver="javascript:changeImage('PageUp','arrow_left2.png')"
+     onMousedown="javascript:changeImage('PageUp','arrow_left3.png')" onMouseUp="javascript:changeImage('PageUp','arrow_left1.png')" 
+    onMouseOut="javascript:changeImage('PageUp','arrow_left1.png')" onClick="javascript:pageUp()"/></td>
+  
+    <td width="100" valign="top"><img src="Images/arrow_right1.png" id="PageDown"  onMouseOver="javascript:changeImage('PageDown','arrow_right2.png')"
+     onMousedown="javascript:changeImage('PageDown','arrow_right3.png')" onMouseUp="javascript:changeImage('PageDown','arrow_right1.png')" 
+    onMouseOut="javascript:changeImage('PageDown','arrow_right1.png')" onClick="javascript:pageDown()"/></td>
+
+	<td width="10" valign="middle"><input name="gotoPage" id="gotoPage" type="text" value="1" size="2" maxlength="4" onchange="javascript:gotoPage()" /></td>
+
+	<td width="100" valign="middle"><a name="numPages" id="numPages"></a></td>
+
+    <td width="50" valign="top"><img src="Images/blank.png" id="Screenshot" onMouseOver="javascript:changeImage('Screenshot','screenshot2.png')" 
+    onMousedown="javascript:screenshot()" onMouseOut="javascript:changeImage('Screenshot','screenshot1.png')" onMouseUp="javascript:endScreenshot()"/></td>
+
+    <td align="right" valign="top"><img src="Images/printer1.png" id="Print"  onMouseOver="javascript:changeImage('Print','printer2.png')"
+    onMousedown="javascript:changeImage('Print','printer3.png')" onMouseUp="javascript:changeImage('Print','printer1.png')" 
+    onMouseOut="javascript:changeImage('Print','printer1.png')" onClick="javascript:printLab()"/></td>
+
+  </tr>
+</table>
+
+
+
+</body>
+</html>

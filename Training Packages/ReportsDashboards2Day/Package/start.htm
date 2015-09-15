@@ -1,0 +1,300 @@
+<html>
+   <head>
+      <title>Oracle BI 11g Reports and Dashboards</title>
+      <script type="text/javascript" src="Library/AIRAliases.js" />
+	  <script src="standard.js" type="text/javascript"></script>
+      <script type="text/javascript">
+
+	var topicNum  = 0;
+	var topicList = [];
+
+	function addTopics() {
+    	configTopic('Overview and Welcome');		
+    	configTopic('Introduction to Answers');
+    	configTopic('Column Properties');
+    	configTopic('Column Formulas');
+		configTopic('Filters');
+		configTopic('Tables, Pivot Tables and Graphs');
+		configTopic('Multiple Subject Areas');
+		configTopic('Other Useful Views');
+		configTopic('Set Operations');
+		configTopic('Drill-Down and Navigation');
+		configTopic('Master-Detail Linking');
+		configTopic('Hierarchical Columns');
+		configTopic('Conditional Formatting');
+		configTopic('Embedded Maps');
+		configTopic('Introduction to Dashboards');
+		configTopic('Dashboard Prompts');
+		configTopic('Action Links and Conditions');
+		configTopic('Presentation Variables');
+		configTopic('Selections, Groups and Calculated Items');
+		configTopic('Dashboard Customizations');
+		configTopic('KPIs');
+		configTopic('Balanced Scorecards');				
+		configTopic('Action Framework');
+		configTopic('BI Delivers');		
+		configTopic('BI Briefing Books');				
+		configTopic('Go-URL Integration');				
+		configTopic('Smart View for MS Office');						
+    }
+
+	function configTopic(topicName) {
+		document.getElementById('topic'+topicNum).innerText = topicName;
+		document.getElementById('topic'+topicNum).href      = "/Package/Presentations/" + topicNum + " - " + topicName + ".pdf";	
+		topicList[topicNum] = topicName;		
+		topicNum = topicNum + 1;
+	}
+
+	function openLab(labNum){
+		window.open('start lab.htm?Lab ' + labNum + ' - ' + topicList[labNum], 'windowname1', 'width=495, height=300, resizable=no, left=500, top=500'); 
+		return false;
+    }
+	
+	function openLabName(labName){
+		window.open('start lab.htm?' + labName, 'windowname1', 'width=495, height=300, resizable=no, left=500, top=500'); 
+		return false;
+    }
+	
+</script>
+<style type="text/css">
+<!--
+body {
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+.homepage_subtitle {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 24px;
+}
+.homepage_caption {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	text-align: center;
+}
+.homepage_title {
+	line-height: 10px;
+	font-size: 26px;
+	font-family: Tahoma, Geneva, sans-serif;	
+	font-weight: bold;
+}
+.homepage_agenda {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.homepage_bullet {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin-left: 0px;
+	font-size: 14px;
+}
+.homepage_agenda p {
+	font-weight: bold;
+	font-size: 14px;
+}
+.homepage_linespace {
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px;
+}
+.homepage_agenda {
+	font-family: Georgia, Times New Roman, Times, serif;
+}
+.SectionHeader {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+-->
+   </style>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   </head>
+   <body onLoad="javascript:addTopics()">
+   <table width="800" border="0">
+     <tr>
+       <td width="74%"><p class="homepage_title"><span class="homepage_title">Oracle Business Intelligence 11g</span></p>
+       <p class="homepage_subtitle"><span class="homepage_title"><span class="homepage_subtitle">Reports and Dashboards</span></span></p></td>
+       <td width="26%" align="center"><img src="Images/peak_logo.png" width="200" height="107" align="right"></td>
+     </tr>
+     <tr>
+       <td>&nbsp;</td>
+       <td align="right" class="homepage_caption"></td>
+     </tr>
+   </table>
+   <table width="54%" border="0" align="left">
+     <tr>
+       <td width="5%" class="homepage_bullet">&nbsp;</td>
+       <td width="80%" class="homepage_bullet"><a id="topic0" href="" target="_blank" class="homepage_bullet"></a></td>
+
+       <td width="15%" class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a href="/Package/Presentations/Peak Indicators Training - Feedback Form.pdf" target="_blank" class="homepage_bullet">Feedback Form</a></td>
+       
+     </tr></table><p>&nbsp;</p>
+     <p class="homepage_linespace">&nbsp;</p>
+   <table width="400px" border="0" align="left">
+     <tr>
+       <td width="25" class="homepage_agenda">&nbsp;</td>
+       <td width="300" class="homepage_agenda"><p>Interactive Reports</p>         <hr></td>
+       <td width="50" class="homepage_agenda"><p>&nbsp;</p><hr></td>
+       <td width="25"class="homepage_agenda">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic1" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(1);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic2" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(2);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic3" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(3);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic4" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(4);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic5" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(5);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic6" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(6);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic7" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(7);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic8" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(8);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic9" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(9);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic10" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(10);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic11" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(11);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic12" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(12);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+       <td class="homepage_bullet"><a id="topic13" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(13);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+   </table>
+   <table width="375px" border="0" align="left">
+     <tr>
+       <td width="300px" class="homepage_agenda"><p>Interactive Dashboards</p>
+         <hr></td>
+       <td width="50px" class="homepage_agenda"><p>&nbsp;</p>         <hr></td>
+       <td width="25px" class="homepage_agenda"><p>&nbsp;</p></td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet"><a id="topic14" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(14);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet"><a id="topic15" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(15);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet"><a id="topic16" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(16);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet"><a id="topic17" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(17);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet"><a id="topic18" href="" target="_blank" class="homepage_bullet"></a></td>
+       <td class="homepage_bullet"><a href="javascript: void(0)" onClick="javascript:openLab(18);">Lab</a></td>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet"><a id="topic19" href="" target="_blank" class="homepage_bullet"></a></td>       
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+     </tr>
+     <tr>
+       <td class="homepage_bullet">&nbsp;</td>
+
+     </tr>
+   </table>
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+   <table width="800" border="0" cellpadding="0">
+     <tr>
+       <td width="296"><img src="Images/peak_copyright.png" width="166" height="27"></td>
+       <td width="297"><img src="Images/oracle_oeac.png" width="200" height="21" align="middle"></td>
+       <td width="199"><img src="Images/oracle_partner.png" width="138" height="21" align="right"></td>
+     </tr>
+   </table>
+   </body>
+</html>
+       
